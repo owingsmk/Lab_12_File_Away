@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
-public class Main {
+public class File_Away {
     public static void main(String[] args) throws FileNotFoundException {
 
         int lines = 0; // lines holds the number of lines in the file set lines to 0
@@ -33,24 +33,23 @@ public class Main {
                 String[] wordsArray = line.split(" "); // call split with space as delimiter and save it to line
                 for (int ctr = 0; ctr < wordsArray.length; ++ctr) {// increment lines go through each element of wordsArray using ctr as index
 
-                    if ((wordsArray[ctr] != null) &&
-                            (wordsArray[ctr].length() > 0)) {
-                        ++words;
+                    if ((wordsArray[ctr] != null) &&  // if wordsArray of ctr is not null and not an emprt string
+                            (wordsArray[ctr].length() > 0)) {  //   wordsArray of ctr is a valid word
+                        ++words; //   increment words
                     }
                 }
 
-                characters += line.length();
+                characters += line.length(); // outside the for loop get length of line and add it to characters
             }
 
-                    aScanner.close();
+                    aScanner.close(); // close aScanner
 
                             System.out.println("The name of the file: " + inputFile.getName());
                             System.out.println("Number of lines in the file: " + lines);
                             System.out.println("Number of words in the file: " + words);
                             System.out.println("Number of characters in the file: " + characters);
-                          }
-
-
-
     }
+
+
+
 }
